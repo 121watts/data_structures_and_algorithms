@@ -1,3 +1,5 @@
+require 'pry'
+
 class IterativeLinkedList
 
   attr_accessor :head
@@ -18,6 +20,21 @@ class IterativeLinkedList
     end
   end
 
+  def pop
+    #get head
+    #follow head until the end
+    #remove end from the list
+    if head
+      current_node = head
+        while current_node.next != nil
+          current_node = current_node.next
+        end
+       last_info = current_node.info
+       current_node = nil
+       last_info
+    end
+  end
+
   def push(info)
     if head.nil?
       self.head = Node.new(info)
@@ -33,7 +50,7 @@ class IterativeLinkedList
 end
 
 class Node
-  attr_accessor :next
+  attr_accessor :next, :info
 
   def initialize(info)
     @info = info
