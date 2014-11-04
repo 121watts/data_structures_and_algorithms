@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/iterative_linked_list'
+require './linked_lists/iterative_linked_list'
 
 class IterativeLinkedListTest < Minitest::Test
   attr_reader :list
@@ -15,7 +15,6 @@ class IterativeLinkedListTest < Minitest::Test
   end
 
   def test_it_pushes_three_elements_onto_a_list
-    skip
     list.push("hello")
     list.push("world")
     list.push("today")
