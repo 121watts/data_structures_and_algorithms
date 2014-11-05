@@ -21,17 +21,26 @@ class IterativeLinkedList
   end
 
   def pop
-    #get head
-    #follow head until the end
-    #remove end from the list
     if head
       current_node = head
-        while current_node.next != nil
-          current_node = current_node.next
+      if current_node.next == nil
+        info = current_node.info
+        self.head = nil
+        info
+      else
+        while current_node.next.next != nil
+          if current_node.next == nil
+            current_node
+          else
+            current_node = current_node.next
+          end
         end
-       last_info = current_node.info
-       current_node = nil
-       last_info
+         last_info = current_node.next.info
+         current_node.next = nil
+         last_info
+      end
+    else
+      nil
     end
   end
 
