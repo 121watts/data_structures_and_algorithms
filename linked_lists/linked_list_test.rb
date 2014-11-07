@@ -43,7 +43,6 @@ class IterativeLinkedListTest < Minitest::Test
   end
 
   def test_it_deletes_a_solo_node
-    skip
     list.push("hello")
     list.delete("hello")
     assert_equal 0, list.count

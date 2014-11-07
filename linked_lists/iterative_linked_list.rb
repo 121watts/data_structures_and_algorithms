@@ -20,6 +20,10 @@ class IterativeLinkedList
     end
   end
 
+  def delete(info)
+
+  end
+
   def pop
     if head
       current_node = head
