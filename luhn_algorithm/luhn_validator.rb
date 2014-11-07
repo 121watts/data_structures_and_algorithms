@@ -1,17 +1,20 @@
+require 'pry'
+
 class LuhnValidator
 
   def validate(account_number)
-    acount_parser(account_number)
+    account_parser(account_number)
     answer
   end
 
   def account_parser(account_number)
-    account_array = account_number.chars.map { |i| i.to_i }.push(0).reverse
+    account_array = account_number.chars.map { |i| i.to_i }.reverse
+    multiply_odd_indexes(account_array)
   end
 
   def multiply_odd_indexes(account_array)
     multiplied = account_array.map.with_index do |ele, index|
-      if index.odd?
+      if index.even?
         ele * 2
       else
         ele
